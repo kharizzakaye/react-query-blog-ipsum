@@ -12,8 +12,9 @@ export function Posts() {
   const { data,  isError, isLoading } = useQuery({
     queryKey: ["posts"], // definition of data
     queryFn: fetchPosts, // function that will run to get data
+    staleTime: 2000, // when to trigger a refetch - if not stated, staleTime = 0ms,
   });
-
+  
   if (isLoading) 
   { 
     return (
